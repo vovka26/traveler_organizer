@@ -1,0 +1,7 @@
+<h1>Activities</h1>
+
+<% @activities.each do |activity|%>
+
+  <div> <%= link_to activity.name, activity_path(activity.id) %> </div>
+
+<% end %>

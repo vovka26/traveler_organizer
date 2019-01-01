@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2018_12_21_195203) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
+    t.string "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 2018_12_21_195203) do
 
   create_table "places", force: :cascade do |t|
     t.string "city"
+    
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
