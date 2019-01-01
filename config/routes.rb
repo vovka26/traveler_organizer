@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  root to: 'places#index'
   resources :categories
   resources :activities
   resources :places
