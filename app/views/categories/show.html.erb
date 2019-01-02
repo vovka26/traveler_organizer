@@ -1,8 +1,12 @@
 <h1> <%= @category.name %></h1>
 
 <div>
+  <%= link_to "Edit this category", edit_category_path %>
+</div>
+
+<div>
   <%= link_to "Delete category", @category, method: "DELETE", data: {confirm: "Delete this category?"} %>
-</div><br>
+</div>
 
 <div>
   <%= link_to "All categories", categories_path %>

@@ -1,8 +1,11 @@
 <h1> <%= @place.city %></h1>
 
 <div>
+  <%= link_to "Edit this place", edit_place_path %>
+</div>
+<div>
   <%= link_to "Delete place", @place, method: "DELETE", data: {confirm: "Delete this place?"} %>
-</div><br>
+</div>
 
 <div>
   <%= link_to "All places", places_path %>

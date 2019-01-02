@@ -3,5 +3,6 @@
 <% @activities.each do |activity|%>
     <div> <%= link_to activity.name, activity_path(activity.id) %> </div>
 <% end %>
-<br><br>
+<br>
+<div> <%= link_to "New Activity", new_activity_path %>
 <div> <%= link_to "Main Page", welcome_index_path %> </div>
