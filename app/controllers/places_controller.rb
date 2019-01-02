@@ -4,9 +4,17 @@ class PlacesController < ApplicationController
 
   def index
     @places = Place.all
+    @places.each do |city|
+      @city
+  end
+end
+
+  def city
+    @city = Place.find(params[:id])
   end
 
   def show
+
   end
 
   def new
@@ -45,7 +53,7 @@ class PlacesController < ApplicationController
   end
 
   def place_params
-    params.require(:place).permit(:city)
+    params.require(:place).permit(:city, :image_url)
   end
 
 end

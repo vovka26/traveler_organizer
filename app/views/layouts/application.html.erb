@@ -1,15 +1,33 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Traveler</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">TravelOrganizer</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li><a href="/places">Places</a></li>
+      <li><a href="/activities">Activities</a></li>
+      <li><a href="/categories">Categories</a></li>
+    </ul>
+    <button class="btn btn-danger navbar-btn">New Event</button>
+  </div>
+</nav>
 
-  <body>
-    <%= yield %>
-  </body>
+<div class="container">
+<%= yield %>
+</div>
+
+</body>
 </html>

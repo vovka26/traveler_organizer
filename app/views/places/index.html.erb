@@ -1,8 +1,16 @@
 <h1>Places</h1>
+<div class="container">
+  <h2>Check out all the places you can visit!</h2>
+  <div class="list-group">
+  <% @places.select do |place|%>
+  <div class="list-group-item">
+  <%= link_to place.city, place_path(place.id) %>
+  <div class="img-circle" alt="Cinque Terre" width="304" height="236">
+  </div>
+</div>
 
-<% @places.each do |place|%>
-  <div> <%= link_to place.city, place_path(place.id) %> </div>
-<% end %>
-<br><br>
-<div> <%= link_to "New Place", new_place_path %>
-<div> <%= link_to "Main Page", welcome_index_path %> </div>
+
+
+
+
+  <% end %>
