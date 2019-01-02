@@ -3,22 +3,12 @@
   <%= f.label :name %>
   <%= f.text_field :name %><br>
 
-  <%= f.label :category_ids, "Choose categories:" %>
-  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+  <%# categories checkboxes  %>
+  <%= f.label :categories %>
 
-  <%# field for a new category %>
-  <%= f.fields_for :categories, @activity.categories.build do |categories_fields| %>
-      <%= categories_fields.text_field :name %>
-  <% end %><br>
+  <%# city name %>
 
- <%# field for a place %>
-  <%= f.label :places, "Enter Place:" %>
-  <%= f.fields_for :places, @activity.places.build do |places_fields| %>
-      <%= places_fields.text_field :city %>
-  <% end %><br>
 
-  <%= f.label :img_url, "Image URL" %>
-  <%= f.text_field :img_url %><br>
 
   <%= f.submit %>
 <% end %>
