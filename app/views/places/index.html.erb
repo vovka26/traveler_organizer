@@ -3,3 +3,5 @@
 <% @places.each do |place|%>
   <div> <%= link_to place.city, place_path(place.id) %> </div>
 <% end %>
+<br><br>
+<div> <%= link_to "Main Page", welcome_index_path %> </div>

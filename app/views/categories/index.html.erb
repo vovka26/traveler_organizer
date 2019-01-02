@@ -3,3 +3,5 @@
 <% @categories.each do |category|%>
   <div> <%= link_to category.name, category_path(category.id) %> </div>
 <% end %>
+<br><br>
+<div> <%= link_to "Main Page", welcome_index_path %> </div>
