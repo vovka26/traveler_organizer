@@ -1,4 +1,4 @@
-class Activity < ApplicationRecord
+class Activity < ActiveRecord::Base
 has_many :activity_places
 has_many :activity_categories
 has_many :places, through: :activity_places

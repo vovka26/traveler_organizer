@@ -22,11 +22,15 @@ ActiveRecord::Schema.define(version: 2018_12_21_195203) do
   create_table "activities_categories", id: false, force: :cascade do |t|
     t.integer "activity_id", null: false
     t.integer "category_id", null: false
+    t.index ["activity_id", "category_id"], name: "index_activities_categories_on_activity_id_and_category_id"
+    t.index ["category_id", "activity_id"], name: "index_activities_categories_on_category_id_and_activity_id"
   end
 
   create_table "activities_places", id: false, force: :cascade do |t|
     t.integer "place_id", null: false
     t.integer "activity_id", null: false
+    t.index ["activity_id", "place_id"], name: "index_activities_places_on_activity_id_and_place_id"
+    t.index ["place_id", "activity_id"], name: "index_activities_places_on_place_id_and_activity_id"
   end
 
   create_table "categories", force: :cascade do |t|
