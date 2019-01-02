@@ -3,12 +3,11 @@
 <div>
   <%= image_tag(@activity.img_url) %>
 </div>
+
 <div>
-  <%= form_tag @activity, method: "DELETE", data: {confirm: "Delete this activity?"} do %>
-      <%= submit_tag "Delete this activity" %>
-  <% end %>
-</div>
-<br><br>
+  <%= link_to "Delete activity", @activitty, method: "DELETE", data: {confirm: "Delete this activity?"} %>
+</div><br>
+
 <div>
   <%= link_to "All activities", activities_path %>
 </div>

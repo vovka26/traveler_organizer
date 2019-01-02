@@ -1,11 +1,9 @@
 <h1> <%= @place.city %></h1>
 
 <div>
-  <%= form_tag @place, method: "DELETE", data: {confirm: "Delete this place?"} do %>
-    <%= submit_tag "Delete this place" %>
-  <% end %>
-</div>
-<br><br>
+  <%= link_to "Delete place", @place, method: "DELETE", data: {confirm: "Delete this place?"} %>
+</div><br>
+
 <div>
   <%= link_to "All places", places_path %>
 </div>
