@@ -3,3 +3,7 @@
 <%= form_tag @category, method: "DELETE", data: {confirm: "Delete this category?"} do %>
     <%= submit_tag "Delete this category" %>
 <% end %>
+<br><br>
+<div>
+  <%= link_to "All categories", categories_path %>
+</div>
