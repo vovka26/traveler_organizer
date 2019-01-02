@@ -1,5 +1,7 @@
 <h1> <%= @place.city %></h1>
 
-<%= form_tag @place, method: "DELETE", data: {confirm: "Delete this place?"} do %>
+<div>
+  <%= form_tag @place, method: "DELETE", data: {confirm: "Delete this place?"} do %>
     <%= submit_tag "Delete this place" %>
-<% end %>
+  <% end %>
+</div>
