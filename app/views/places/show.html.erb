@@ -1,1 +1,5 @@
 <h1> <%= @place.city %></h1>
+
+<%= form_tag @place, method: "DELETE" do %>
+    <%= submit_tag "Delete this place" %>
+<% end %>

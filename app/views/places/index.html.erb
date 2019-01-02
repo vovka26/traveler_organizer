@@ -1,7 +1,5 @@
 <h1>Places</h1>
 
 <% @places.each do |place|%>
-
-  <div> <%= link_to place.city, place_path(place.id) %> </div>
-
+  <div> <%= link_to place.city, place_path(place) %> </div>
 <% end %>
