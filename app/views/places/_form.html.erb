@@ -1,13 +1,6 @@
 <%= form_for @place do |f| %>
-
-  <%= f.label :city, "City name:" %>
-  <%= f.text_field :city %><br>
-  <%= f.label :category_ids, "Choose categories:" %>
-  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %><br>
-  <%= f.label :activities, "Enter activity:" %>
-  <%= f.fields_for :activities, @place.activities.build do |activities_fields| %>
-      <%= activities_fields.text_field :name %>
-  <% end %><br>
+  <%= f.label :city %>
+  <%= f.text_field :city %>
 
   <br><%= f.submit %>
 <% end %>

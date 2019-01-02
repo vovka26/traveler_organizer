@@ -14,7 +14,7 @@ class PlacesController < ApplicationController
   end
 
   def create
-
+    byebug
     @place = Place.new(place_params)
     byebug
     if @place.save
@@ -48,7 +48,7 @@ class PlacesController < ApplicationController
   end
 
   def place_params
-    params.require(:place).permit(:city,  category_ids:[], categories_attributes: [:name], activity_ids:[], activities_attributes:[:name])
+    params.require(:place).permit(:city)
   end
 
 end
