@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :categories
   resources :activities
   resources :places
-  resources :welcome, only: [:index]
+  resources :welcome, only: [:index,:show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+get 'places', to: 'static#places'
+
+
 end

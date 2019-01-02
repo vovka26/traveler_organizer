@@ -1,5 +1,10 @@
 <h1> <%= @place.city %></h1>
-
+<div>
+  <%= image_tag(@place.image_url) %>
+</div>
+  <% @place.activities.each do|activity|%>
+  <h3><%= activity.name %></h3>
+  <% end %>
 <div>
   <%= link_to "Edit this place", edit_place_path %>
 </div>

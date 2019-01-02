@@ -18,12 +18,12 @@ Category.find_or_create_by(name: "Indoor")
 Category.find_or_create_by(name: "Beach")
 Category.find_or_create_by(name: "Tours")
 
-Place.find_or_create_by(city: "New York City")
-Place.find_or_create_by(city: "Sydney")
-Place.find_or_create_by(city: "London")
-Place.find_or_create_by(city: "Hong Kong")
-Place.find_or_create_by(city: "Paris")
-Place.find_or_create_by(city: "Fiji")
+Place.find_or_create_by(city: "New York City", image_url: "https://amp.businessinsider.com/images/59567b26a3630f950f8b6295-750-375.jpg")
+Place.find_or_create_by(city: "Sydney", image_url: "https://cdn.pixabay.com/photo/2016/01/30/05/11/sydney-opera-house-1169155__340.jpg")
+Place.find_or_create_by(city: "London", image_url: "http://image.noelshack.com/fichiers/2016/22/1465150340-london-dest-16531610x.jpg")
+Place.find_or_create_by(city: "Hong Kong", image_url: "https://travelpassionate.com/wp-content/uploads/2018/10/Giant-Buddha-Po-Lin-Monastery-at-Lantau-Island-in-Hong-Kong-with-blue-sky-min.jpg")
+Place.find_or_create_by(city: "Paris", image_url: "http://www.world-city-photos.org/Paris/Eiffel_Tower/Eiffel_Tower_lights.jpg")
+Place.find_or_create_by(city: "Fiji", image_url: "http://www.world-city-photos.org/Paris/Eiffel_Tower/Eiffel_Tower_lights.jpg")
 
 
 Activity.find_or_create_by(name: "Scuba Diving", img_url: "http://www.freakingnews.com/Pictures/5/Shark-Diving.jpg")
