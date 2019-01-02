@@ -14,7 +14,9 @@ class PlacesController < ApplicationController
   end
 
   def create
+
     @place = Place.new(place_params)
+    byebug
     if @place.save
       redirect_to @place
     else
@@ -23,6 +25,7 @@ class PlacesController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
@@ -45,7 +48,7 @@ class PlacesController < ApplicationController
   end
 
   def place_params
-    params.require(:place).permit(:city)
+    params.require(:place).permit(:city,  category_ids:[], categories_attributes: [:name], activity_ids:[], activities_attributes:[:name])
   end
 
 end

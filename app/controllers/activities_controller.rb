@@ -26,6 +26,7 @@ class ActivitiesController < ApplicationController
   end
 
   def update
+
     if @activity.update(activity_params)
       redirect_to @activity
     else
@@ -45,7 +46,7 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:name)
+    params.require(:activity).permit(:name,:img_url, category_ids:[], categories_attributes:[:name])
   end
 
 end

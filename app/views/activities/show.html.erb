@@ -1,7 +1,14 @@
 <h1> <%= @activity.name %></h1>
-<% byebug %>
 <div>
-  <%= image_tag(@activity.img_url) %>
+  <% if @activity.img_url %>
+    <%= image_tag(@activity.img_url) %>
+  <% end %>
+</div>
+
+<div>
+  <% @activity.categories.each do |category| %>
+      <%= link_to category.name, category_path(category.id) %><br>
+  <% end %>
 </div>
 
 <div>
