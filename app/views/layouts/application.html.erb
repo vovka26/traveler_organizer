@@ -17,11 +17,11 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="/">Home</a></li>
-      <li><a href="/places">Places</a></li>
-      <li><a href="/activities">Activities</a></li>
-      <li><a href="/categories">Categories</a></li>
+      <li><a href="<%=places_path%>">Places</a></li>
+      <li><a href="<%=activities_path%>">Activities</a></li>
+      <li><a href="<%=categories_path%>">Categories</a></li>
     </ul>
-    <button class="btn btn-danger navbar-btn">New Event</button>
+    <a href="<%=new_activity_path%>"><button class="btn btn-danger navbar-btn">New Event</button></a>
   </div>
 </nav>
 

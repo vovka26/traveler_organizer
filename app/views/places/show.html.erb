@@ -1,6 +1,8 @@
 <div class="container">
   <h1> <%= @place.city %></h1>
-  <%= image_tag(@place.img_url, :size => "304x236") %>
+  <% if @place.image %>
+    <%= image_tag(@place.img_url, :size => "304x236") %>
+  <% end %>
 </div>
 
 <div>
