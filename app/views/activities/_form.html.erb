@@ -4,11 +4,19 @@
   <%= f.text_field :name %><br>
 
   <%# categories checkboxes  %>
-  <%= f.label :categories %>
+  <%= f.label :categories, "Categories:" %>
+  <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |box| %>
+      <%= box.check_box %>
+      <%= box.label %>
+  <% end %><br>
 
-  <%# city name %>
-
-
-
+  <%# create a new place  %>
+  <%= f.fields_for :places, Place.new do |place_builder| %>
+    <%= place_builder.label :city, "City:" %>
+    <%= place_builder.text_field :city %>
+  <% end %><br>
+  <%# adds image  %>
+  <%= f.label :img_url, "Image URL:" %>
+  <%= f.text_field :img_url %><br>
   <%= f.submit %>
 <% end %>

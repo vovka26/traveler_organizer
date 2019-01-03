@@ -14,9 +14,7 @@ class PlacesController < ApplicationController
   end
 
   def create
-    byebug
     @place = Place.new(place_params)
-    byebug
     if @place.save
       redirect_to @place
     else

@@ -14,6 +14,7 @@ class ActivitiesController < ApplicationController
   end
 
   def create
+    # raise params.inspect
     @activity = Activity.new(activity_params)
     if @activity.save
       redirect_to @activity
@@ -46,7 +47,7 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_params
-    params.require(:activity).permit(:name,:img_url, category_ids: [], categories_attributes:[:name], places_ids: [], places_attributes:[:name])
+    params.require(:activity).permit(:name,:img_url, category_ids: [], categories_attributes:[:name], places_ids: [], places_attributes:[:city])
   end
 
 end
