@@ -18,14 +18,18 @@ Category.find_or_create_by(name: "Indoor")
 Category.find_or_create_by(name: "Beach")
 Category.find_or_create_by(name: "Tours")
 
-Place.find_or_create_by(city: "New York City")
-Place.find_or_create_by(city: "Sydney")
-Place.find_or_create_by(city: "London")
-Place.find_or_create_by(city: "Hong Kong")
-Place.find_or_create_by(city: "Paris")
-Place.find_or_create_by(city: "Fiji")
+nyc = Place.find_or_create_by(city: "New York City", img_url: "https://amp.businessinsider.com/images/59567b26a3630f950f8b6295-750-375.jpg")
+Place.find_or_create_by(city: "Sydney", img_url: "https://cdn.pixabay.com/photo/2016/01/30/05/11/sydney-opera-house-1169155__340.jpg")
+Place.find_or_create_by(city: "London", img_url: "http://image.noelshack.com/fichiers/2016/22/1465150340-london-dest-16531610x.jpg")
+Place.find_or_create_by(city: "Hong Kong", img_url: "https://travelpassionate.com/wp-content/uploads/2018/10/Giant-Buddha-Po-Lin-Monastery-at-Lantau-Island-in-Hong-Kong-with-blue-sky-min.jpg")
+Place.find_or_create_by(city: "Paris", img_url: "http://www.world-city-photos.org/Paris/Eiffel_Tower/Eiffel_Tower_lights.jpg")
+Place.find_or_create_by(city: "Fiji", img_url: "http://www.world-city-photos.org/Paris/Eiffel_Tower/Eiffel_Tower_lights.jpg")
 
 
-Activity.find_or_create_by(name: "Scuba Diving", img_url: "http://www.freakingnews.com/Pictures/5/Shark-Diving.jpg")
-Activity.find_or_create_by(name: "Hiking", img_url: "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjFh6qcksHfAhXRTd8KHffGBv4QjRx6BAgBEAU&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F173388654380814346%2F&psig=AOvVaw1kTxIxWdgx4zfUBh7EOOSd&ust=1546038957190421")
+
+scuba = Activity.find_or_create_by(name: "Scuba Diving", img_url: "http://www.freakingnews.com/Pictures/5/Shark-Diving.jpg")
+hiking = Activity.find_or_create_by(name: "Hiking", img_url: "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjFh6qcksHfAhXRTd8KHffGBv4QjRx6BAgBEAU&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F173388654380814346%2F&psig=AOvVaw1kTxIxWdgx4zfUBh7EOOSd&ust=1546038957190421")
 Activity.find_or_create_by(name: "Shopping", img_url: "https://i.pinimg.com/236x/45/9d/7d/459d7d16a5d583d8ff4170a71e94effa--shopping-meme-speech-therapy.jpg")
+
+nyc.activities << scuba
+nyc.activities << hiking
