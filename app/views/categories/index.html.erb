@@ -1,7 +1,11 @@
 <h1>Categories</h1>
 
 <% @categories.each do |category|%>
-  <div> <%= link_to category.name, category_path(category.id) %> </div>
+    <div> <%= link_to category.name, category_path(category.id) %> </div>
+      <% if category.image.attached? %>
+       <div><a href="<%=category_path(category)%>" ><%= image_tag(category.image, :size => "304x236") %></a></div>
+       <% end %>
+
 <% end %>
 <br><br>
 <div> <%= link_to "New Category", new_category_path %>

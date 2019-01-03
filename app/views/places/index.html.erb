@@ -7,3 +7,10 @@
     <%= link_to place.city, place_path(place.id) %>
 </div>
   <% end %>
+
+
+  <% @places.each do |place| %>
+   <% if place.image.attached? %>
+      <p><a href="<%=place_path(place)%>" ><%= image_tag(place.image, :size => "304x236") %></a></p>
+    <% end %>
+  <% end %>

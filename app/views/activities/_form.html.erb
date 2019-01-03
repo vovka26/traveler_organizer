@@ -15,8 +15,7 @@
     <%= place_builder.label :city, "City:" %>
     <%= place_builder.text_field :city %>
   <% end %><br>
-  <%# adds image  %>
-  <%= f.label :img_url, "Image URL:" %>
-  <%= f.text_field :img_url %><br>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
   <%= f.submit %>
 <% end %>

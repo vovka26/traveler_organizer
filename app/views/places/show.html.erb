@@ -3,6 +3,12 @@
   <% if @place.img_url %>
     <%= image_tag(@place.img_url, :size => "304x236") %>
   <% end %>
+  <% if @place.image.attached? %>
+  <!-- @post.image.present? will always return true, use attached? to check presence -->
+    <p>
+      <%= image_tag(@place.image, :size => "304x236") %>
+    </p>
+  <% end %>
 </div>
 
 <div>

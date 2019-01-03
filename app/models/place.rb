@@ -1,4 +1,5 @@
 class Place < ActiveRecord::Base
+  has_one_attached :image
   has_many :activity_places
   has_many :activity_categories
   has_many :activities, through: :activity_places

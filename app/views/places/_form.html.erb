@@ -1,6 +1,7 @@
 <%= form_for @place do |f| %>
   <%= f.label :city %>
   <%= f.text_field :city %>
-
+  <%= f.label :image %>
+  <%= f.file_field :image %>
   <br><%= f.submit %>
 <% end %>

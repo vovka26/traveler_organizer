@@ -1,5 +1,10 @@
 <h1> <%= @category.name %></h1>
-
+<% if @category.image.attached? %>
+<!-- @post.image.present? will always return true, use attached? to check presence -->
+  <div>
+    <%= image_tag(@category.image, :size => "304x236") %>
+  </div>
+<% end %>
 <h3>Activities: </h3>
 <div>
   <% @category.activities.each do |activity| %>

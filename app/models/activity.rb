@@ -1,4 +1,5 @@
 class Activity < ActiveRecord::Base
+  has_one_attached :image
   has_many :activity_places
   has_many :activity_categories
   has_many :places, through: :activity_places
@@ -6,8 +7,8 @@ class Activity < ActiveRecord::Base
   accepts_nested_attributes_for :categories
   accepts_nested_attributes_for :places
 
-  validates :name, presence: true
   validates :name, uniqueness: true
+  validates_presence_of :name, :image
 
 
   def categories_attributes=(category_attributes)
