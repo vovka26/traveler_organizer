@@ -16,7 +16,8 @@ class ActivitiesController < ApplicationController
   def create
     # raise params.inspect
     @activity = Activity.new(activity_params)
-    if @activity.save
+    if @activity.valid?
+      @activity.save
       redirect_to @activity
     else
       render :new

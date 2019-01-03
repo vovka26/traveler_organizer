@@ -6,6 +6,10 @@ class Activity < ActiveRecord::Base
   accepts_nested_attributes_for :categories
   accepts_nested_attributes_for :places
 
+  validates :name, presence: true
+  validates :name, uniqueness: true
+
+
   def categories_attributes=(category_attributes)
     category_attributes.values.each do |category_attribute|
       category = Category.find_or_create_by(category_attribute)
