@@ -1,13 +1,8 @@
 <h1> <%= @activity.name %></h1>
 <div>
-  <% if @activity.img_url %>
-    <%= image_tag(@activity.img_url) %>
-  <% end %>
-</div>
+  <% @activity.places.each do |place| %>
 
-<div>
-  <% @activity.categories.each do |category| %>
-      <p><%= link_to category.name, category_path(category.id) %></p>
+      <p><%= link_to place.city, place_path(place.id) %></p>
   <% end %>
 </div>
 

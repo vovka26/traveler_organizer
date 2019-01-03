@@ -11,7 +11,7 @@
   <% end %><br>
 
   <%# create a new place  %>
-  <%= f.fields_for :places, Place.new do |place_builder| %>
+  <%= f.fields_for :places, @activity.places.build do |place_builder| %>
     <%= place_builder.label :city, "City:" %>
     <%= place_builder.text_field :city %>
   <% end %><br>
