@@ -4,10 +4,7 @@ class PlacesController < ApplicationController
 
   def index
     @places = Place.all
-    @places.each do |city|
-      @city
   end
-end
 
   def city
     @city = Place.find(params[:id])
