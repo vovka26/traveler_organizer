@@ -14,13 +14,13 @@
 
 
 <div>
-<%= link_to "Edit this place", edit_place_path %>
+  <%= link_to "Edit this place", edit_place_path %>
 </div>
 
 <div>
-<%= link_to "Delete place", @place, method: :delete, data: {confirm: "Delete this place?"} %>
+  <%= button_to "Delete this place", @place, method: "delete", data: {confirm: "Are you sure?" } %>
 </div>
 
 <div>
-<%= link_to "All places", places_path %>
+  <%= link_to "All places", places_path %>
 </div>

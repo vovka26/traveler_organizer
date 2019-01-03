@@ -11,8 +11,9 @@
 </div>
 
 <div>
-  <%= link_to "Delete activity", @activity, method: "DELETE", data: {confirm: "Delete this activity?"} %>
+  <%= button_to "Delete this activity", @activity, method: "delete", data: {confirm: "Are you sure?" } %>
 </div>
+
 
 <div>
   <%= link_to "All activities", activities_path %>
