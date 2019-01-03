@@ -1,13 +1,9 @@
-<body>
    <div class="container">
      <h1> <%= @place.city %></h1>
      <%= image_tag(@place.image_url, :size => "304x236") %>
    </div>
 
-   
-
 <div>
-
   <% @place.activities.each do |activity| %>
       <%= link_to activity.name, activity_path(activity.id) %><br>
   <% end %>
@@ -18,6 +14,7 @@
 <div>
   <%= link_to "Edit this place", edit_place_path %>
 </div>
+
 <div>
   <%= link_to "Delete place", @place, method: "DELETE", data: {confirm: "Delete this place?"} %>
 </div>
@@ -25,4 +22,3 @@
 <div>
   <%= link_to "All places", places_path %>
 </div>
-</body>
