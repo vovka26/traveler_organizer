@@ -1,7 +1,9 @@
 <h1>Add New Place</h1>
-<div>
-  <%= render 'form' %>
-</div>
+
+<%= render partial: "shared/error_list", locals: {new_object: @place} %>
+
+<%= render 'form' %>
+
 
 <div>
   <%= link_to "Cancel", places_path %>

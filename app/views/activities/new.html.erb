@@ -1,7 +1,9 @@
 <h1>Add New Activity</h1>
-<div>
-  <%= render 'form' %>
-</div>
+
+<%= render partial: "shared/error_list", locals: {new_object: @activity} %>
+
+<%= render 'form' %>
+
 
 <div>
   <%= link_to "Cancel", activities_path %>

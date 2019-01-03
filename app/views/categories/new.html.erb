@@ -1,7 +1,9 @@
 <h1>Add New Category</h1>
-<div>
-  <%= render 'form' %>
-</div>
+
+<%= render partial: "shared/error_list", locals: {new_object: @category} %>
+
+<%= render 'form' %>
+
 
 <div>
   <%= link_to "Cancel", categories_path %>
