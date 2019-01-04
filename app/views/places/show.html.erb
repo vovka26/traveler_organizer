@@ -1,21 +1,18 @@
 <div class="container">
-  <h1> <%= @place.city %></h1>
-  <% if @place.img_url %>
-    <%= image_tag(@place.img_url, :size => "304x236") %>
-  <% end %>
   <% if @place.image.attached? %>
-  <!-- @post.image.present? will always return true, use attached? to check presence -->
     <p>
       <%= image_tag(@place.image, :size => "304x236") %>
     </p>
   <% end %>
 </div>
 
-<div>
+<h2> Activities for <%= @place.city %> </h2>
 <% @place.activities.each do |activity| %>
-   <%= link_to activity.name, activity_path(activity.id) %><br><br>
+  <h4>
+   <%= link_to activity.name, activity_path(activity.id) %>
+   </h4>
 <% end %>
-</div>
+
 
 
 
