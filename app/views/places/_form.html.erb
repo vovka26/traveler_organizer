@@ -1,7 +1,12 @@
-<%= form_for @place do |f| %>
+
+<%= form_for @place, class: "form-inline" do |f| %>
+<div class="form-group" id="whatever">
   <%= f.label :city %>
   <%= f.text_field :city %>
+</div>
+<div class="form-group">
   <%= f.label :image %>
   <%= f.file_field :image %>
-  <br><%= f.submit %>
+</div>
+  <%= f.submit %>
 <% end %>
