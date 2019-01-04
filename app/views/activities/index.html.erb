@@ -14,7 +14,6 @@
     <p><a href="<%=activity_path(activity)%>" ><%= image_tag(activity.image, :size => "304x236") %></a></p>
   <% end %>
 <% end %>
-
 <br>
-<div> <%= link_to "New Activity", new_activity_path %>
-<div> <%= link_to "Main Page", welcome_index_path %> </div>
+<p> <%= link_to "New Activity", new_activity_path %></p>
+<p> <%= link_to "Main Page", welcome_index_path %> </p>
