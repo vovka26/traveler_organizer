@@ -1,43 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Travel Organizer</title>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
+  </style>
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">TravelOrganizer</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="/">Home</a></li>
-      <li><a href="<%=places_path%>">Places</a></li>
-      <li><a href="<%=activities_path%>">Activities</a></li>
-      <li><a href="<%=categories_path%>">Categories</a></li>
-    </ul>
-    <a href="<%=new_activity_path%>"><button class="btn btn-danger navbar-btn">New Event</button></a>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Logo</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="<%=places_path%>">Places</a></li>
+            <li><a href="<%=activities_path%>">Activities</a></li>
+            <li><a href="<%=categories_path%>">Categories</a></li>
+          </ul>
+          <a href="<%=new_activity_path%>"><button class="btn btn-danger navbar-btn">New Event</button></a>
+          <ul class="nav navbar-nav navbar-right">
+            <% if session.has_key? "user_id" %>
+              <p style="color:grey">Welcome, <%= current_user.username.capitalize %></p>
+              <p class=""><%= link_to "Log Out", logout_path %></p>
+            <% else %>
+                <li><a href="<%=login_path %>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <%end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <%= yield %>
 
-    <div class="login">
-      <% if session.has_key? "user_id" %>
-        <p>Welcome, <%= current_user.username.capitalize %></p>
-        <p class="right"><%= link_to "Log Out", logout_path %></p>
-      <% else %>
-        <p> <%= link_to "Log In", login_path %></p>
-      <% end %>
-    </div>
 
-  </div>
-</nav>
-
-<div class="container-fluid text-center">
-<%= yield %>
-</div>
 
 </body>
 </html>
