@@ -1,8 +1,20 @@
 <h1>Activities</h1>
-
+<div class="container">
+  <h2>Check out all the places you can visit!</h2>
+</div>
 <% @activities.each do |activity|%>
+<div class="list-group-item">
     <div> <%= link_to activity.name, activity_path(activity.id) %> </div>
+</div>
 <% end %>
+<br>
+
+<% @activities.each do |activity| %>
+ <% if activity.image.attached? %>
+    <p><a href="<%=activity_path(activity)%>" ><%= image_tag(activity.image, :size => "304x236") %></a></p>
+  <% end %>
+<% end %>
+
 <br>
 <div> <%= link_to "New Activity", new_activity_path %>
 <div> <%= link_to "Main Page", welcome_index_path %> </div>
