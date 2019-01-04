@@ -1,5 +1,7 @@
 <% if new_object.errors %>
+    <ul class="error_list">
         <% new_object.errors.full_messages.each do |message| %>
-            <div class="error"><%= message %></div>
+            <li class="error"><%= message %></li>
         <% end %>
+    </ul>
 <% end %>
