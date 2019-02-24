@@ -13,6 +13,11 @@
 
  */
 
-#whatever {
-  color: blue;
+.category_images {
+  display: inline-block;
+  width: 33%;
+}
+
+input .button_inblock {
+  display: inline-block;
 }

@@ -1,25 +1,26 @@
-<h1> <%= @category.name %></h1>
-<% if @category.image.attached? %>
-<!-- @post.image.present? will always return true, use attached? to check presence -->
-  <div>
-    <%= image_tag(@category.image, :size => "304x236") %>
-  </div>
-<% end %>
-<h3>Activities: </h3>
+<h1> All places where you can do <%= @category.name.downcase %>:</h1>
 <div>
   <% @category.activities.each do |activity| %>
-      <%= link_to activity.name, activity_path(activity.id) %>
-  <% end %><br><br>
+      <% if activity.image.attached? %>
+        <div class="category_images">
+          <%= link_to activity.name, activity_path(activity.id) %>
+          <a href="<%=activity_path(activity)%>" ><%= image_tag(activity.image, :size => "304x236") %></a></div>
+      <% end %>
+
+  <% end %>
+
 </div>
+
 
 <div>
   <%= link_to "Edit this category", edit_category_path %>
 </div>
 
 <div>
-  <%= button_to "Delete this category", @category, method: "delete" %>
+  <%= button_to "Delete this category", @category, method: "delete"%>
 </div>
 
+
 <div>
-  <%= link_to "All categories", categories_path %>
+  <%= link_to "All activities", activities_path %>
 </div>

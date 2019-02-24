@@ -1,11 +1,3 @@
-<div class="container">
-  <% if @place.image.attached? %>
-    <p>
-      <%= image_tag(@place.image, :size => "304x236") %>
-    </p>
-  <% end %>
-</div>
-
 <h2> Activities for <%= @place.city %> </h2>
 <% @place.activities.each do |activity| %>
   <h4>

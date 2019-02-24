@@ -1,21 +1,30 @@
-<%= form_for @activity do |f| %>
+<%= form_for @activity, class: "form-horizontal" do |f| %>
+  <div class="form-group">
+      <%= f.label :name, class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+  </div>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
 
-  <%# categories checkboxes  %>
-  <%= f.label :categories, "Categories:" %>
+  <%= f.label :categories, "Categories:", class: "control-label col-sm-2" %>
   <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |box| %>
+
       <%= box.check_box %>
       <%= box.label %>
   <% end %><br>
 
-  <%# create a new place  %>
   <%= f.fields_for :places, @activity.places.build do |place_builder| %>
-    <%= place_builder.label :city, "City:" %>
-    <%= place_builder.text_field :city %>
-  <% end %><br>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+    <div class="form-group">
+      <%= place_builder.label :city, "City:", class: "control-label col-sm-2" %>
+      <div class="col-sm-10">
+        <%= place_builder.text_field :city, class: "form-control" %>
+      </div>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :image, class: "control-label col-sm-2" %>
+    <%= f.file_field :image, class: "button_inblock" %>
+  </div>
   <%= f.submit %>
 <% end %>

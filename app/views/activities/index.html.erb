@@ -2,18 +2,15 @@
 <div class="container">
   <h2>Check out all the places you can visit!</h2>
 </div>
-<% @activities.each do |activity|%>
-<div class="list-group-item">
-    <div> <%= link_to activity.name, activity_path(activity.id) %> </div>
-</div>
-<% end %>
-<br>
 
+
+<div class="grid-container">
 <% @activities.each do |activity| %>
- <% if activity.image.attached? %>
-    <p><a href="<%=activity_path(activity)%>" ><%= image_tag(activity.image, :size => "304x236") %></a></p>
-  <% end %>
+    <% if activity.image.attached? %>
+      <div class="category_images">
+        <%= link_to activity.name, activity_path(activity.id) %>
+        <a href="<%=activity_path(activity)%>" ><%= image_tag(activity.image, :size => "304x236") %></a></div>
+    <% end %>
+
 <% end %>
-<br>
-<p> <%= link_to "New Activity", new_activity_path %></p>
-<p> <%= link_to "Main Page", welcome_index_path %> </p>
+</div>

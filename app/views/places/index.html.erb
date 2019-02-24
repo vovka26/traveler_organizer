@@ -3,12 +3,17 @@
     <h2>Check out all the places you can visit!</h2>
 </div>
 
+<div class="grid-container">
 <% @places.each do |place| %>
+
     <% if place.image.attached? %>
-      <div><a href="<%=place_path(place)%>" ><%= image_tag(place.image, :size => "304x236") %></a></div>
-    <% else %>
-      <div class="list-group-item">
-          <%= link_to place.city, place_path(place.id) %>
-       </div>
+
+      <div class="category_images">
+        <%= link_to place.city, place_path(place.id) %>
+        <a href="<%=place_path(place)%>" ><%= image_tag(place.image, :size => "304x236") %></a>
+      </div>
+
     <% end %>
+
 <% end %>
+</div>

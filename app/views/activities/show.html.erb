@@ -1,15 +1,16 @@
-<h1> <%= @activity.name %></h1>
+<h1> All places where you can do <%= @activity.name.downcase %>:</h1>
 <div>
   <% @activity.places.each do |place| %>
-      <p><%= link_to place.city, place_path(place.id) %></p>
+      <% if place.image.attached? %>
+        <div class="category_images">
+          <%= link_to place.city, place_path(place.id) %>
+          <a href="<%=place_path(place)%>" ><%= image_tag(place.image, :size => "304x236") %></a></div>
+      <% end %>
+
   <% end %>
 
 </div>
-  <% if @activity.image.attached? %>
-    <p>
-        <%= image_tag @activity.image %>
-    </p>
-  <% end %>
+
 
 <div>
   <%= link_to "Edit this activity", edit_activity_path %>
